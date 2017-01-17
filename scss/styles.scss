@@ -1,0 +1,92 @@
+/**
+ * Variables
+ */
+ $font-stack: Helvetica, sans-serif;
+ $primary-color: #bbb;
+ $hover-color: #ddd;
+ $header-color: blue;
+ $white: #FFFFFF;
+
+/**
+ * Basic layout
+ */
+header{
+  background-color: $header-color;
+  height: 250px;
+  text-align: center;
+  color: $white;
+}
+
+.container {
+  font-family: $font-stack;
+
+  h1{
+    color: $primary-color;
+    font-size: 60px;
+
+    &:hover{
+      color: $hover-color;
+    }
+  }
+
+  p{
+    color: orange;
+  }
+}
+
+.column1{
+  background-color: green;
+}
+
+.column2{
+  background-color: red;
+}
+
+/**
+ * Popular post overlays
+ */
+.most-popular-posts{
+  font-size: 0;
+  text-align: center;
+}
+.most-popular-posts h2{
+  font-size: 20px;
+}
+.popular-post{
+  position: relative; /* child elements absolute */
+  display: inline-block;
+  height: 330px;
+  width: 25%; /*325px;*/
+}
+
+.popular-post::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.5s;
+}
+
+.popular-post:hover::before{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.popular-post h3{
+  position: absolute;
+  bottom: 0;
+  margin-left: 20px;
+  color: #FFFFFF;
+  font-size: 40px;
+  transition: color 0.5s;
+}
+
+.popular-post:hover h3{
+  color: #000000;
+}
+
+.popular-post img{
+  max-width: 100%;
+}
